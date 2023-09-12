@@ -13,9 +13,17 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <div>
+                        <a href="{{ route('home') }}" class="btn btn-primary"><=</a>
+                    </div>
+                    <h1>Create your workspace</h1>
+                    <form>
+                        <input type="text" name="workspace"/>
+                        <input type="submit" value="Create"/>
+                    </form>
 
                     {{ __('Add task by press the "+" button below') }}
-                    <div class="text-center mt-4">
+                    <div>
                         <a href="{{ route('todolist') }}" class="btn btn-primary">+</a>
                     </div>
                 </div>

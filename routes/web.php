@@ -21,5 +21,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/workspace', [App\Http\Controllers\WorkspaceController::class, 'index'])->name('workspace');
+Route::post('/workspace', [App\Http\Controllers\WorkspaceController::class, 'create']);
 Route::get('/todolist', [App\Http\Controllers\TodoListController::class, 'index'])->name('todolist');
 Route::get('/edit', [App\Http\Controllers\HomeController::class, 'index'])->name('edit');
