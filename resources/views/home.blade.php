@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('Start adding your workspace now') }}
+                    
                 </div>
             </div>
         </div>

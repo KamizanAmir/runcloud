@@ -22,4 +22,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/create', [App\Http\Controllers\TodoController::class, 'create']);
+Route::get('/output', [App\Http\Controllers\TodoController::class, 'output']);
 Route::post('/upload', [App\Http\Controllers\TodoController::class, 'upload']);
