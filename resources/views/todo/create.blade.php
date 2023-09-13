@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Add workspace') }}</div>
+                <div class="card-header">{{ __('Workspace') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,19 +13,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div>
-                        <a href="{{ route('home') }}" class="btn btn-primary"><=</a>
-                    </div>
+                    
                     <h1>Create your workspace</h1>
-                    <form>
-                        <input type="text" name="workspace"/>
+                    <h3>
+                        <x-alert/>
+                    </h3>
+                    <form action="/upload" method="post">
+                        @csrf
+                        <input type="text" name="title"/>
                         <input type="submit" value="Create"/>
                     </form>
-
-                    {{ __('Add task by press the "+" button below') }}
-                    <div>
-                        <a href="{{ route('todolist') }}" class="btn btn-primary">+</a>
-                    </div>
                 </div>
             </div>
         </div>

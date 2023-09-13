@@ -14,10 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('Add a workspace by press the "+" button below') }}
-                    <div>
-                        <a href="{{ route('workspace') }}" class="btn btn-primary">+</a>
-                    </div>
+                    {{ __('Start adding your workspace now') }}
                 </div>
             </div>
         </div>
