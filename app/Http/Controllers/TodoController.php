@@ -4,21 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Todo;
+use App\Models\Task;
+
 
 class TodoController extends Controller
 {
     public function create(){
-        return view('todo.create');
+        $todo2 = Todo::all();
+        return view('todo.create')->with(['todos'=>$todo2]);
     }
 
     #show all workspace that user has input
     public function output(){
-        $todo2 = Todo::all();
-        return view('todo.output')->with(['todos'=>$todo2]);
+        //
     }
 
     #upload input to DB
-    public function upload(Request $request){
+    private function upload(Request $request){
+        
         $request->validate([
             'title' => 'required | max:255',
         ]);

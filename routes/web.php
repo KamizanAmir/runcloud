@@ -20,7 +20,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\TodoController::class, 'create']);
 Route::get('/create', [App\Http\Controllers\TodoController::class, 'create']);
-Route::get('/output', [App\Http\Controllers\TodoController::class, 'output']);
+Route::get('/create/task', [App\Http\Controllers\TaskController::class, 'create']);
 Route::post('/upload', [App\Http\Controllers\TodoController::class, 'upload']);
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/home', [App\Http\Controllers\TodoController::class, 'create']);
+    Route::get('/create', [App\Http\Controllers\TodoController::class, 'create']);
+    Route::get('/create/task', [App\Http\Controllers\TaskController::class, 'create']);
+    Route::post('/upload', [App\Http\Controllers\TodoController::class, 'upload']);
+});

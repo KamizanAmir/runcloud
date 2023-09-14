@@ -193,7 +193,7 @@
 }
 
 body {
-    margin: 0;
+    margin: auto;
     font-family: var(--bs-body-font-family);
     font-size: var(--bs-body-font-size);
     font-weight: var(--bs-body-font-weight);
@@ -399,7 +399,7 @@ samp {
 }
 
 pre {
-    display: block;
+    display: inline;
     margin-top: 0;
     margin-bottom: 1rem;
     overflow: auto;
@@ -489,10 +489,12 @@ button,
 select,
 optgroup,
 textarea {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit
+    border-radius: 5%;
+    padding-block: 0.5px;
+    font-family: cursive;
+    font-size: 16px;
+    margin : auto;
+    line-height: 40px;
 }
 
 button,
@@ -838,8 +840,8 @@ progress {
 }
 
 .row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
+    --bs-gutter-x: 1em;
+    --bs-gutter-y: 2em;
     display: flex;
     flex-wrap: wrap;
     margin-top: calc(-1 * var(--bs-gutter-y));
@@ -1349,8 +1351,13 @@ progress {
     }
 
     .col-md-6 {
-        flex: 0 0 auto;
-        width: 50%
+        /*flex: none;*/
+        width: 60%;
+        display: flex;
+        /*justify-content: space-evenly;*/
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: space-around;
     }
 
     .col-md-7 {
@@ -1360,7 +1367,7 @@ progress {
 
     .col-md-8 {
         flex: 0 0 auto;
-        width: 66.66666667%
+        width: 100%;
     }
 
     .col-md-9 {
@@ -1400,7 +1407,7 @@ progress {
     }
 
     .offset-md-4 {
-        margin-left: 33.33333333%
+        margin: auto;
     }
 
     .offset-md-5 {
@@ -2376,7 +2383,7 @@ progress {
 }
 
 .col-form-label {
-    padding-top: calc(.375rem + var(--bs-border-width));
+    padding-top: 4px;
     padding-bottom: calc(.375rem + var(--bs-border-width));
     margin-bottom: 0;
     font-size: inherit;
@@ -2402,12 +2409,30 @@ progress {
 }
 
 .form-control {
-    display: block;
+    display: inline;
     width: 100%;
     padding: .375rem .75rem;
     font-size: .9rem;
     font-weight: 400;
     line-height: 1.6;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+.form-control2 {
+    padding: .375rem .75rem;
+    position: relative;
+    flex: 1 1 auto;
+    line-height: 1.6;
+    font-size: .9rem;
+    font-weight: 400;
+    min-width: 0;
     color: var(--bs-body-color);
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -2448,7 +2473,7 @@ progress {
 }
 
 .form-control::-webkit-datetime-edit {
-    display: block;
+    display: inline;
     padding: 0
 }
 
@@ -2488,7 +2513,7 @@ progress {
 }
 
 .form-control-plaintext {
-    display: block;
+    display: inline;
     width: 100%;
     padding: .375rem 0;
     margin-bottom: 0;
@@ -2577,7 +2602,7 @@ textarea.form-control-lg {
 
 .form-select {
     --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
-    display: block;
+    display: inline;
     width: 100%;
     padding: .375rem 2.25rem .375rem .75rem;
     font-size: .9rem;
@@ -2645,7 +2670,7 @@ textarea.form-control-lg {
 }
 
 .form-check {
-    display: block;
+    display: inline;
     min-height: 1.44rem;
     padding-left: 1.5em;
     margin-bottom: .125rem
@@ -2688,7 +2713,7 @@ textarea.form-control-lg {
 }
 
 .form-check-input[type=checkbox] {
-    border-radius: .25em
+    border-radius: 4.25em
 }
 
 .form-check-input[type=radio] {
@@ -4064,7 +4089,7 @@ fieldset:disabled .btn {
 }
 
 .dropdown-item {
-    display: block;
+    display: inline;
     width: 100%;
     padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
     clear: both;
@@ -4103,7 +4128,7 @@ fieldset:disabled .btn {
 }
 
 .dropdown-header {
-    display: block;
+    display: inline;
     padding: var(--bs-dropdown-header-padding-y) var(--bs-dropdown-header-padding-x);
     margin-bottom: 0;
     font-size: .7875rem;
@@ -4112,7 +4137,7 @@ fieldset:disabled .btn {
 }
 
 .dropdown-item-text {
-    display: block;
+    display: inline;
     padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
     color: var(--bs-dropdown-link-color)
 }
@@ -4263,7 +4288,7 @@ fieldset:disabled .btn {
 }
 
 .nav-link {
-    display: block;
+    display: inline;
     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
     font-size: var(--bs-nav-link-font-size);
     font-weight: var(--bs-nav-link-font-weight);
@@ -4924,7 +4949,7 @@ fieldset:disabled .btn {
     min-width: 0;
     height: var(--bs-card-height);
     color: var(--bs-body-color);
-    word-wrap: break-word;
+    /*word-wrap: break-word;*/
     background-color: var(--bs-card-bg);
     background-clip: border-box;
     border: var(--bs-card-border-width) solid var(--bs-card-border-color);
@@ -4959,7 +4984,7 @@ fieldset:disabled .btn {
 }
 
 .card-body {
-    flex: 1 1 auto;
+    flex: none;
     padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
     color: var(--bs-card-color)
 }
@@ -8889,7 +8914,7 @@ fieldset:disabled .btn {
 }
 
 .mb-3 {
-    margin-bottom: 1rem !important
+    margin-bottom: 2rem !important
 }
 
 .mb-4 {

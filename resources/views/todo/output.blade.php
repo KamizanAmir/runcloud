@@ -18,7 +18,10 @@
                     @foreach($todos as $todo)
                         <li>
                             <b>{{ $todo -> title }}</b>
-                            <a style="margin-left:30px">(Date Workspace Create : </a>{{ $todo -> created_at }}<a>)</a>
+                            <a href="/create/task" style="margin-left:15px">Add task</a>
+                            <a> | </a>
+                            <a href="" style="margin-left:5px">Delete Workspace</a>
+                            <a style="margin-left:10px; font-family:cursive; font-size:10px">( {{ $todo -> created_at }} )</a>
                         </li>
                     @endforeach
                     <br><br>
