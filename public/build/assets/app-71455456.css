@@ -1351,7 +1351,7 @@ progress {
     }
 
     .col-md-6 {
-        /*flex: none;*/
+        flex: none;
         width: 60%;
         display: flex;
         /*justify-content: space-evenly;*/

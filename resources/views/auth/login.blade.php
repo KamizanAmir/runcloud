@@ -55,38 +55,33 @@
                         <hr style="margin-bottom: 3em;"/>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div>
-                                    <input class="form-check-input" style="border-color:blue;
-                                    border-style:solid; border-width:thin;" 
-                                    type="checkbox" name="remember" 
-                                    id="remember" {{ old('remember') ? 'checked' : '' }}/>
+                            <div style="width:100%" class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" style="border-color: blue; border-style: solid; border-width: thin;" 
+                                        type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}/>
                                     <label class="form-check-label" for="remember">
-                                        <a style="font-size:15px; font-family:cursive;"> {{ __('<= "Remember Me" Checkbox') }}</a>
-                                        <a style="margin-left:3em; margin-right:3em;"> | </a>
-                                        <a style="font-size:15px; font-family:cursive;">Don't have account yet? 
-                                        @if (Route::has('register'))
-                                            <a style="font-size:15px; font-family:cursive;" 
-                                            href="{{ route('register') }}">
-                                                {{ __('Click here') }}
-                                            </a>
-                                            <span style="font-size:15px; font-family:cursive;">to register :)</span>
-                                        @endif
-                                        </a>
-                                        <a style="margin-left:3em; margin-right:3em;"> | </a>
-                                        @if (Route::has('password.request'))
-                                            <a style="font-size:15px; font-family:cursive;" 
-                                            href="{{ route('password.request') }}">
-                                                {{ __('Forgot Your Password?') }}
-                                            </a>
-                                        @endif
-                                        
+                                        <a style="margin:right:10em; font-size: 15px; font-family: cursive;"> {{ __('Remember Me') }}</a>
                                     </label>
+                                    <a style="margin-left:1em; margin-right:1em;"> | </a>
+                                    <a style="font-size: 15px; font-family: cursive;">Don't have an account yet? 
+                                        @if (Route::has('register'))
+                                            <a style="font-size: 15px; font-family: cursive;" href="{{ route('register') }}">
+                                                {{ __('Register') }}
+                                            </a>
+                                            <span style="font-size: 15px; font-family: cursive;">here.</span>
+                                        @endif
+                                    </a>
+                                    <a style="margin-left:1em; margin-right:1em;"> | </a>
+                                    @if (Route::has('password.request'))
+                                        <a style="font-size: 15px; font-family: cursive;" href="{{ route('password.request') }}">
+                                            {{ __('Forgot Your Password?') }}
+                                        </a>
+                                    @endif
                                 </div>
                                 <br>
                                 <br>
                                 <div>
-                                    <button style="background-color:#3982c3; color:white; display:block;
+                                    <button style="background-color:#3982c3; color:white; display:flex; justify-content:center;
                                     font-size:18px; font-family:cursive; width:50%;" 
                                     class="btn btn-outline-secondary" type="submit">
                                         {{ __('Login') }}
@@ -94,6 +89,8 @@
                                 </div>
                             </div>
                         </div>
+
+
                         <style>
                             #show-password-toggle {
                                 color: #333; /* Change this color to the desired color */
