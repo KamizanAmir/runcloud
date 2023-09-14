@@ -14,13 +14,8 @@ class TodoController extends Controller
         return view('todo.create')->with(['todos'=>$todo2]);
     }
 
-    #show all workspace that user has input
-    public function output(){
-        //
-    }
-
     #upload input to DB
-    private function upload(Request $request){
+    public function upload(Request $request){
         
         $request->validate([
             'title' => 'required | max:255',

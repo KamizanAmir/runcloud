@@ -18,14 +18,6 @@
                     <h3>
                         <x-alert/>
                     </h3>
-                    <style>
-                        .centerme {
-                            margin: auto;
-                            width: 60%;
-                            border: 3px;
-                            padding: 10px;
-                        }
-                    </style>
                     <form action="/upload" method="post">
                         @csrf
                         <div class="input-group">

@@ -43,7 +43,7 @@
                                         required autocomplete="current-password">
                                     <button type="button" style="font-family:cursive;" id="show-password-toggle" 
                                     class="btn btn-outline-secondary">
-                                        Show
+                                        Show Password
                                     </button>
                                 </div>
                                 @error('password')
@@ -52,31 +52,42 @@
                                 </span>
                                 @enderror
                             </div>
-                        <hr/>
+                        <hr style="margin-bottom: 3em;"/>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
+                            <div style="width:100%;" class="col-md-6 offset-md-4">
                                 <div>
-                                    <input class="form-check-input" style="margin-top:0.4em; border-color:black" 
+                                    <input class="form-check-input" style="border-color:blue;
+                                    border-style:solid; border-width:thin;" 
                                     type="checkbox" name="remember" 
                                     id="remember" {{ old('remember') ? 'checked' : '' }}/>
                                     <label class="form-check-label" for="remember">
-                                        <a style="font-size:18px; font-family:cursive;"> {{ __(' <- Remember Me') }}</a>
+                                        <a style="font-size:15px; font-family:cursive;"> {{ __(' <- Remember Me Checkbox') }}</a>
+                                        <a style="margin-left:3em; margin-right:3em;"> | </a>
+                                        <a style="font-size:15px; font-family:cursive;">Don't have account yet? 
+                                        @if (Route::has('register'))
+                                            <a style="font-size:15px; font-family:cursive;" 
+                                            href="{{ route('register') }}">
+                                                {{ __('Click here') }}
+                                            </a>
+                                            <span style="font-size:15px; font-family:cursive;">to register :)</span>
+                                        @endif
+                                        </a>
+                                        <a style="margin-left:3em; margin-right:3em;"> | </a>
+                                        @if (Route::has('password.request'))
+                                            <a style="font-size:15px; font-family:cursive;" 
+                                            href="{{ route('password.request') }}">
+                                                {{ __('Forgot Your Password?') }}
+                                            </a>
+                                        @endif
+                                        
                                     </label>
                                 </div>
                                 <br>
-                                <div>
-                                    @if (Route::has('password.request'))
-                                        <a style="font-size:18px; font-family:cursive;" 
-                                        href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    @endif
-                                </div>
-                                <br>
                                 <br>
                                 <div>
-                                    <button style="background-color:#3982c3; color:white; font-size:18px; font-family:cursive; width:50%;" 
+                                    <button style="background-color:#3982c3; color:white; display:block;
+                                    font-size:18px; font-family:cursive; width:50%;" 
                                     class="btn btn-outline-secondary" type="submit">
                                         {{ __('Login') }}
                                     </button>
@@ -95,10 +106,11 @@
                                     
                                 showPasswordToggle.addEventListener("click", function() {
                                     if (passwordInput.type === "password") {
-                                        passwordInput.type = "text";                                            showPasswordToggle.textContent = "Hide";
+                                        passwordInput.type = "text";
+                                        showPasswordToggle.textContent = "Hide Password";
                                     } else {
                                         passwordInput.type = "password";
-                                        showPasswordToggle.textContent = "Show";
+                                        showPasswordToggle.textContent = "Show Password";
                                     }
                                 });
                             });
