@@ -89,17 +89,23 @@
                                 class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
-                        <div>
-                            <button style="background-color:#3982c3; color:white; font-size:18px; font-family:cursive; width:50%;" 
-                                    class="btn btn-outline-secondary" type="submit">
-                                {{ __('Register') }}
+                        <hr/>
+                        <div style="display:flex; justify-content:center">
+                            <button style="width:50%; background-color:#3982c3; color:white; font-size:18px; font-family:cursive; width:50%;" 
+                                class="btn" type="submit">
+                                    {{ __('Register') }}
                             </button>
-                            <button style="background-color:#3982c3; color:white; display:block;
-                                    font-size:18px; font-family:cursive; width:50%;" 
-                                    class="btn btn-outline-secondary" type="submit">
-                                        {{ __('Login') }}
-                            </button>
+                        </div>
+                        <br>
+                        <div style="display:flex; justify-content:center">
+                            <b style="font-family:cursive; font-size:15px; text-align:center">Or</b>
+                        </div>
+                        <br>
+                        <div style="display:flex; justify-content:center">
+                            <a href="/login" style="background-color:#3982c3; color:white; font-size:18px; font-family:cursive; width:50%;" 
+                                class="btn">
+                                {{ __('Login') }}
+                            </a>
                         </div>
                     </form>
                 </div>

@@ -24,7 +24,8 @@
                             <input type="text" name="title" class="form-control2" style="text-align:center; width:50%" placeholder="Eg : Workspace 1" required/>
                             <button type="submit" class="btn btn-outline-secondary">Create</button>
                         </div>
-                    </form>
+                    </form><br>
+                    <hr/><br>
                     <h1 style="font-family:cursive">Your current Workspace :</h1><br><br>
                     @php $counter = 1 @endphp
                     @foreach($todos as $todo)

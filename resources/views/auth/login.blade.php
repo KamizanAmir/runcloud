@@ -55,14 +55,14 @@
                         <hr style="margin-bottom: 3em;"/>
                         </div>
                         <div class="row mb-3">
-                            <div style="width:100%;" class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4">
                                 <div>
                                     <input class="form-check-input" style="border-color:blue;
                                     border-style:solid; border-width:thin;" 
                                     type="checkbox" name="remember" 
                                     id="remember" {{ old('remember') ? 'checked' : '' }}/>
                                     <label class="form-check-label" for="remember">
-                                        <a style="font-size:15px; font-family:cursive;"> {{ __(' <- Remember Me Checkbox') }}</a>
+                                        <a style="font-size:15px; font-family:cursive;"> {{ __('<= "Remember Me" Checkbox') }}</a>
                                         <a style="margin-left:3em; margin-right:3em;"> | </a>
                                         <a style="font-size:15px; font-family:cursive;">Don't have account yet? 
                                         @if (Route::has('register'))
