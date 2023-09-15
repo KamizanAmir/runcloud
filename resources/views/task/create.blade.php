@@ -15,7 +15,7 @@
                     <div style="text-align:center">
                     @foreach($todos as $todo)
                     @endforeach
-                    <h1 style="font-family:cursive">{{ $todo -> title }}</h1><br>
+                    <h1 style="font-family:cursive">{{ $todo->title }}</h1><br>
                     <h3>
                         <x-alert/>
                     </h3>
@@ -49,7 +49,7 @@
                                     <span class="input-group-addon datepicker">
                                         <h1 class="fas fa-calendar"></h1> <!-- FontAwesome calendar icon -->
                                     </span>
-                                    <input placeholder="Select a due date" style="text-align:center; font-family:cursive;" 
+                                    <input placeholder="Click the calendar icon." style="text-align:center; font-family:cursive;" 
                                         type="text" class="form-control2" name="due_date" required
                                         data-date-format="yyyy-mm-dd" id="due_date" readonly>
                                 </div>
@@ -59,6 +59,8 @@
                             $(document).ready(function () {
                                 // Target input fields with the 'datepicker' class and apply the datepicker widget
                                 $('.datepicker').datepicker({
+                                    todayHighlight: true, // Highlighting Today's Date so the user much aware of their due date
+                                    startDate : 'tomorrow', // Force user to start the calendar within today, since no due to past right??
                                     autoclose: true, // Automatically close the datepicker when a date is selected
                                     format: 'yyyy-mm-dd', // Set the date format
                                 }).on('changeDate', function (e) {
@@ -67,21 +69,32 @@
                                 });
                             });
                         </script>
-                    </form><br>
-                    <button style="background-color:#3982c3; color:white;
+                        <style>
+                            /* Custom CSS to change the color of the highlighted date */
+                            .today {
+                                background-color: yellow;
+                                color: red; /* Optional: Change text color */
+                            }
+                        </style>
+                        <button style="background-color:#3982c3; color:white;
                             display:block; font-size:18px; font-family:cursive; width:50%;" 
-                            class="btn btn-outline-secondary" type="submit">Create</button>
+                            class="btn btn-outline-secondary" type="submit">Create</button><br>
                     <hr style="margin-bottom: 3em;"/>
+                    </form>
+                    
                     <h1 style="font-family:cursive">Your current Task :</h1><br><br>
                     @php $counter = 1 @endphp
                     @foreach($tasks as $task)
                         <li>
                             <b>{{ $counter }} :</b>
                             <b style="font-family:cursive; margin-left:5px;">{{ $task -> title }}</b>
-                            <a href="/create/task" style="margin-left:15px; font-family:cursive;">Add another task</a>
-                            <a> | </a>
-                            <a href="" style="margin-left:5px; font-family:cursive;">Task Complete</a>
-                            <a style="margin-left:10px; font-family:italic; font-size:12px">( {{ $task -> created_at }} )</a>
+                            <a href="/create/task" style="margin-left:15px; font-family:cursive;">Edit</a>
+                            <a href="/create/task" style="margin-left:15px; font-family:cursive;">Mark as Finish</a>
+                            <!--should change the isFinish attribute to 1 and show when he mark the task as
+                            finish or when the value change to 1 from 0 !-->
+                            <!--<a> | </a>
+                            <a href="" style="margin-left:5px; font-family:cursive;">Complete</a>
+                            <a style="margin-left:10px; font-family:italic; font-size:12px">( {{ $task -> created_at }} )</a>!-->
                         </li>
                         @php $counter++ @endphp
                     @endforeach

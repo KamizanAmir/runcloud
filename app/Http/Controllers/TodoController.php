@@ -16,12 +16,19 @@ class TodoController extends Controller
 
     #upload input to DB
     public function upload(Request $request){
-        
         $request->validate([
             'title' => 'required | max:255',
         ]);
         $todow = $request->title;
         Todo::create(['title' => $todow]);
         return redirect()->back()->with('success', 'Workspace have been added successfully.');
+    }
+
+    public function add($id){
+        $taskw = Task::all();
+        $todo2 = Todo::all();
+        $todow = Todo::find($id);
+        $updateTitle = $todow -> title;
+        return view('task.create')->with(['id'=> '$id', 'title' => $updateTitle, 'tasks' => $taskw, 'todos'=>$todo2]);
     }
 }

@@ -32,7 +32,7 @@
                         <li>
                             <b>{{ $counter }} :</b>
                             <b style="font-family:cursive; margin-left:5px;">{{ $todo -> title }}</b>
-                            <a href="/create/task" style="margin-left:15px; font-family:cursive;">Add task</a>
+                            <a href="{{ asset('/' . $todo->id . '/create/task') }}" style="margin-left:15px; font-family:cursive;">Add or View task</a>
                             <a> | </a>
                             <a href="" style="margin-left:5px; font-family:cursive;">Delete Workspace</a>
                             <a style="margin-left:10px; font-family:italic; font-size:12px">( {{ $todo -> created_at }} )</a>

@@ -23,10 +23,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\TodoController::class, 'create']);
 
 Route::middleware(['auth'])->group(function(){
-
+    #Route::get('/create/task', [App\Http\Controllers\TaskController::class, 'create']);
     Route::get('/home', [App\Http\Controllers\TodoController::class, 'create']);
     Route::get('/create', [App\Http\Controllers\TodoController::class, 'create']);
-    Route::get('/create/task', [App\Http\Controllers\TaskController::class, 'create']);
     Route::post('/upload/task', [App\Http\Controllers\TaskController::class, 'upload']);
     Route::post('/upload', [App\Http\Controllers\TodoController::class, 'upload']);
+    Route::get('/{id}/create/task', [App\Http\Controllers\TodoController::class, 'add']);
 });
